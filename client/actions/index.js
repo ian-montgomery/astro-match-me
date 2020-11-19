@@ -1,23 +1,27 @@
+import request from 'superagent'
 // import { getFruits } from '../apis/fruits'
 
-// export const SET_FRUITS = 'SET_FRUITS'
+export const GET_USERS = 'GET_USERS'
 
-// export function setFruits (fruits) {
-  //   return {
-    //     type: SET_FRUITS,
-    //     fruits
-    //   }
-    // }
+export const getUsers = (profiles) => {
+  return {
+    type: GET_USERS,
+    profiles
+  }
+}
     
-    // export function fetchFruits () {
-      //   return dispatch => {
-        //     return getFruits()
-        //       .then(fruits => {
-          //         dispatch(setFruits(fruits))
-          //         return null
-          //       })
-          //   }
-          // }
+export function fetchUsers () {
+  return (dispatch) => {
+    return request
+      .get('/')
+      .then(res => {
+        dispatch(getUsers(res.body))
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+}
 
 export const GET_ROBOT = 'GET_ROBOT'
           
