@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 
 
 function Matches () {
-
+<div className='profile-wrapper'>
     return <h1>HI</h1>
+    </div>
 }
 
 
