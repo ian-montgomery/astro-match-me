@@ -2,13 +2,13 @@ import { ADD_PERSON } from '../actions'
 
 const initialState = []
 
-function profiles (state = initialState, action) {
+function people (state = initialState, action) {
   switch (action.type) {
     case ADD_PERSON:
-      return action.person
+      return [...state, action.person]
     default:
       return state
   }
 }
 
-export default profiles
+export default people
