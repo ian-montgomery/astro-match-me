@@ -1,8 +1,8 @@
 import { ADD_PERSON } from '../actions'
 
-const initialState = []
+const initialState = {}
 
-function profiles (state = initialState, action) {
+function latestPerson (state = initialState, action) {
   switch (action.type) {
     case ADD_PERSON:
       return action.person
@@ -12,3 +12,4 @@ function profiles (state = initialState, action) {
 }
 
 export default profiles
+export default latestPerson

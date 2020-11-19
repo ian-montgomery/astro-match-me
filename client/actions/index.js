@@ -20,7 +20,8 @@ export function fetchUsers () {
 }
 
 export const GET_ROBOT = 'GET_ROBOT'
-
+export const RETURN_MATCHES = 'RETURN_MATCHES'
+          
 export const getRobot = (name) => {
   return {
     type: GET_ROBOT,
