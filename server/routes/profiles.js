@@ -7,6 +7,7 @@ const db = require('../db/db')
 router.get('/', (req, res) => {
   return db.getProfiles()
     .then(profiles => {
+      // console.log(profiles)
       res.json(profiles)
     })
     .catch(err => {

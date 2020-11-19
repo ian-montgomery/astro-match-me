@@ -1,5 +1,4 @@
 import request from 'superagent'
-// import { getFruits } from '../apis/fruits'
 
 export const GET_USERS = 'GET_USERS'
 
