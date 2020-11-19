@@ -7,8 +7,8 @@ const db = require('../db/db')
 router.get('/', (req, res) => {
   return db.getProfiles()
     .then(profiles => {
-      // console.log(profiles)
       res.json(profiles)
+      console.log(profiles)
     })
     .catch(err => {
       console.log(err)

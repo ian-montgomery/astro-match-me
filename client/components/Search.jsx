@@ -2,14 +2,9 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import { fetchUsers } from '../actions'
-
 
 class Search extends React.Component {
 
-  componentDidMount () {
-    this.props.dispatch(fetchUsers())
-  }
 
   render() {
     return (

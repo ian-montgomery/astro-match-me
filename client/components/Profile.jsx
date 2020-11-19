@@ -22,7 +22,7 @@ function mapStateToProps(globalState) {
   return {
     robots: globalState.robots,
     person: globalState.person,
-    profiles: globalState.profiles
+    users: globalState.users
   }
 }
 export default connect(mapStateToProps)(Profile)

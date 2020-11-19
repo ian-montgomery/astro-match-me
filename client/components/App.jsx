@@ -25,7 +25,7 @@ function App(props) {
 function mapStateToProps (globalState) {
   return {
     activePage: globalState.activePage,
-    profiles: globalState.profiles
+    users: globalState.users
 
   }
 }

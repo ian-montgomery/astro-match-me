@@ -2,10 +2,10 @@ import request from 'superagent'
 
 export const GET_USERS = 'GET_USERS'
 
-export const getUsers = (profiles) => {
+export const getUsers = (users) => {
   return {
     type: GET_USERS,
-    profiles
+    users
   }
 }
     
@@ -15,9 +15,6 @@ export function fetchUsers () {
       .get('/')
       .then(res => {
         dispatch(getUsers(res.body))
-      })
-      .catch(err => {
-        console.log(err)
       })
   }
 }
