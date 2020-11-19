@@ -1,26 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Matcher from './Matches'
 
 import { fetchFruits } from '../actions'
 
 export class App extends React.Component {
-  state = {
-    fruits: []
-  }
+  // state = {
+  //   fruits: []
+  // }
 
-  componentDidMount () {
-    this.props.dispatch(fetchFruits())
-  }
+  // componentDidMount () {
+  //   this.props.dispatch(fetchFruits())
+  // }
 
   render () {
     return (
       <div className='app'>
         <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
+        {/* <ul>
           {this.props.fruits.map(fruit => (
             <li key={fruit}>{fruit}</li>
           ))}
-        </ul>
+        </ul> */}
+        <Matcher/>
       </div>
     )
   }

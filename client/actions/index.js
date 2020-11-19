@@ -20,6 +20,7 @@
           // }
 
 export const GET_ROBOT = 'GET_ROBOT'
+export const RETURN_MATCHES = 'RETURN_MATCHES'
           
 export const getRobot = (name) => {
   return {
@@ -28,3 +29,12 @@ export const getRobot = (name) => {
 
   }
 }
+
+// export const matches = () => {
+//   return {
+//     type:RETURN_MATCHES,
+//     matches: 
+
+//   }
+// }
+
