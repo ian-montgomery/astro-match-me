@@ -11,11 +11,12 @@ import { connect } from 'react-redux'
 function App(props) {
   return (
     <div className='app'>
-         {Header}
-         {/* {Search}
-         {Form}
-          {Profile}
-         {Matches} */}
+         <Header/>
+         <Search/>
+         <Form/>
+         <Matches/>
+         <Profile/>
+         
     </div>
   )
 }
