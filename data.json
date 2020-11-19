@@ -1,61 +1,61 @@
 {      
       "Aries": {
-        "top": [],
-        "bottom": []
+        "top": ["Gemini", "Sagittarius", "Leo"],
+        "bottom": ["Virgo", "Capricorn",  "Taurus"]
       },
 
       "Cancer": {
-        "top": [],
-        "bottom": []
+        "top": ["Taurus", "Scorpio", "Virgo"],
+        "bottom": ["Aquarius", "Libra", "Gemini"]
       },
     
       "Leo": {
-        "top": [],
-        "bottom": []
+        "top": ["Sagittarius", "Aries", "Gemini"],
+        "bottom": ["Capricorn", "Taurus", "Scorpio"]
       },
 
       "Pisces": {
-        "top": [],
-        "bottom": []
+        "top": ["Scorpio", "Cancer", "Capricorn"],
+        "bottom": ["Libra", "Gemini", "Sagittarius"]
       },
 
       "Gemini": {
-        "top": [],
-        "bottom": []
+        "top": ["Libra", "Aquarius", "Aries"],
+        "bottom": ["Pisces", "Virgo", "Scorpio"]
       },
 
       "Sagitarius": {
-        "top": [],
-        "bottom": []
+        "top": ["Aries", "Aquarius", "Leo"],
+        "bottom": ["Taurus", "Capricorn", "Virgo"]
       },
       
       "Virgo": {
-        "top": [],
-        "bottom": []
+        "top": ["Taurus", "Cancer", "Capricorn"],
+        "bottom": ["Gemini", "Libra", "Aries"]
       },
 
       "Taurus": {
-        "top": [],
-        "bottom": []
+        "top": ["Cancer", "Capricorn", "Pisces"],
+        "bottom": ["Aquarius", "Gemini", "Sagittarius"]
       },
 
       "Libra": {
-        "top": [],
-        "bottom": []
+        "top": ["Aquarius", "Gemini", "Sagittarius"],
+        "bottom": ["Pisces", "Cancer", "Taurus"]
       },
 
       "Capricorn": {
-        "top": [],
-        "bottom": []
+        "top": ["Taurus", "Pisces", "Virgo"],
+        "bottom": ["Aries", "Sagittarius", "Leo"]
       },
 
       "Scorpio": {
-        "top": [],
-        "bottom": []
+        "top": ["Cancer", "Capricorn", "Pisces"],
+        "bottom": ["Libra", "Leo", "Gemini"]
       },
 
       "Aquarius": {
-        "top": [],
-        "bottom": []
+        "top": ["Sagittarius", "Libra", "Gemini"],
+        "bottom": ["Virgo", "Pisces", "Scorpio"]
       }
 }
