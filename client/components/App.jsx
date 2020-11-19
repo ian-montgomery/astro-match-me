@@ -15,14 +15,15 @@ function App(props) {
       <Search/>
       <Form/>
       <Matches/>
-      <Profile/>
+      {props.latestPerson && <Profile person={props.latestPerson}/>}
     </div>
   )
 }
 
 function mapStateToProps (globalState) {
   return {
-    activePage: globalState.activePage
+    activePage: globalState.activePage,
+    latestPerson: globalState.latestPerson
   }
 }
 
