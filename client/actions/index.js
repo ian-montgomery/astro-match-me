@@ -12,7 +12,7 @@ export const getUsers = (users) => {
 export function fetchUsers () {
   return (dispatch) => {
     return request
-      .get('/')
+      .get('/profiles')
       .then(res => {
         dispatch(getUsers(res.body))
       })

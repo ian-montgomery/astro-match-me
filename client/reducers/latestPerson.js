@@ -11,5 +11,4 @@ function latestPerson (state = initialState, action) {
   }
 }
 
-export default profiles
 export default latestPerson
