@@ -13,17 +13,16 @@ function App(props) {
   
   return (
     <div className='app'>
-         <Header/>
-         <Search/>
-         <Form/>
-         <Matches/>
-         <Profile/>
-         
+      <Header/>
+      <Search/>
+      <Form/>
+      <Matches/>
+      <Profile/>
     </div>
   )
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     activePage: globalState.activePage,
     profiles: globalState.profiles

@@ -1,13 +1,14 @@
-const initialState = []
-import { GET_USERS } from '../actions/index'
+import { ADD_PERSON } from '../actions'
 
-const reducer = (state = initialState, action) => {
-    switch(action.type) {
-        case GET_USERS:
-            return action.profiles
-        default: 
-            return state
-    }
+const initialState = []
+
+function profiles (state = initialState, action) {
+  switch (action.type) {
+    case ADD_PERSON:
+      return action.person
+    default:
+      return state
+  }
 }
 
-export default reducer
+export default profiles
