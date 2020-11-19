@@ -1,4 +1,4 @@
-import {GET_ROBOT} from '../actions'
+import { GET_ROBOT } from '../actions'
 
 function robots (state = 'https://robohash.org/YOUR-TEXT.png', action) {
   switch (action.type) {
