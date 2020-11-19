@@ -6,7 +6,6 @@ import Form from './Form.jsx'
 import Matches from './Matches.jsx'
 import Profile from './Profile.jsx'
 import { connect } from 'react-redux'
-import Matcher from './Matches'
 
 // This might need to be turned into a stateful (class-based) component
 function App(props) {
