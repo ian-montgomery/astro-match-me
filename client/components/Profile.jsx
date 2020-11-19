@@ -1,40 +1,27 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 
-const Profile = () => {
+const Profile = (props) => {
+  
   return (
-<>
       <div className='profile-wrapper'>
 
       <div className='profile'>
-          <img className='profile-pic' src= 'https://ca.slack-edge.com/T02SQPVAC-U01A44SB7T2-ce31a05eb871-512'/>
+          <img className='profile-pic' src={props.robots}/>
         <div className='profile-name-plate'>
-          <span className='profile-name'>Hortense</span>
-          <span className='profile-sign'>Cancer</span>
+          <span className='profile-name'>{props.name}</span>
+          <span className='profile-sign'>{props.sign}</span>
         </div>
-        </div>
-
-
-      <div className='profile'>
-          <img className='profile-pic' src= 'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/rabbit-face.png'/>
-        <div className='profile-name-plate'>
-          <span className='profile-name'>Bunny</span>
-          <span className='profile-sign'>Capricorn</span>
-        </div>
-        </div>
-
-
-      <div className='profile'>
-          <img className='profile-pic' src= 'https://i.pinimg.com/originals/b2/d4/6f/b2d46fbb7ed4de9a73f55f5b8cbfc084.png'/>
-        <div className='profile-name-plate'>
-          <span className='profile-name'>Tigger</span>
-          <span className='profile-sign'>Leo</span>
         </div>
     </div>
-    </div>
-    </>
   )
 }
 
-
-export default Profile
+function mapStateToProps(globalState) {
+  return {
+    robots: globalState.robots,
+    person: globalState.person
+  }
+}
+export default connect(mapStateToProps)(Profile)
