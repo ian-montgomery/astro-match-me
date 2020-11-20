@@ -1,6 +1,6 @@
 import { ADD_PERSON } from '../actions'
 
-const initialState = {}
+const initialState = null
 
 function latestPerson (state = initialState, action) {
   switch (action.type) {
