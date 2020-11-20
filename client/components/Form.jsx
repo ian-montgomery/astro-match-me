@@ -17,7 +17,8 @@ class Form extends React.Component {
     })
   }
 
-  submitHandler = () => {
+  submitHandler = (e) => {
+    e.preventDefault()
     this.props.dispatch(addUser({
       name: this.state.name,
       sign: this.state.sign
@@ -27,13 +28,28 @@ class Form extends React.Component {
       sign: ''
     })
   }
+  
+  // signArr = [
+  //   '♈︎',
+  //   'Cancer',
+  //   'Leo',
+  //   'Pisces',
+  //   'Gemini',
+  //   'Sagittarius',
+  //   'Virgo',
+  //   'Taurus',
+  //   'Libra',
+  //   'Capricorn',
+  //   'Scorpio',
+  //   'Aquarius'
+  // ]
 
   render () {
     return (
       <div>
         <form className='form'>
           <label className='btn' htmlFor="name">Name: </label>
-          <input onChange={this.handleChange} className='input' value={this.state.name} name="name" label='Name' type="text"/>
+          <input onChange={this.handleChange} className='input' value={this.state.name} autoFocus={true} name="name" label='Name' type="text"/>
           <br/>
 
           <label className='btn' htmlFor="sign">Sign: </label>
@@ -58,7 +74,7 @@ class Form extends React.Component {
             <option value="Aquarius">Aquarius</option>
           </select>
 
-          <button onClick ={() => this.submitHandler()} className='text-btn' type="button"> Submit </button>
+          <button onClick ={(e) => this.submitHandler(e)} className='text-btn' type="submit"> Submit </button>
         </form>
       </div>
     )
