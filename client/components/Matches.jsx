@@ -10,12 +10,10 @@ function Matches({sign, profiles}) {
   const userSign = sign
   const myMatches = data[userSign].top
 
-
   const matchedProfiles = matchFilter(profiles, myMatches)
+
   //map over these to display them 
   
-
-
   return (
     <div className = 'profile-wrapper'>
    
