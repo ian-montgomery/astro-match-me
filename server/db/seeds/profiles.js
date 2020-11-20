@@ -10,7 +10,7 @@ exports.seed = function (knex) {
         { id: 4, name: 'Emily', sign: 'Aries'},
         { id: 5, name: 'Saskia', sign: 'Leo'},
         { id: 6, name: 'Jess', sign: 'Cancer'},
-        { id: 7, name: 'Olivia', sign: 'Sagitarius'},
+        { id: 7, name: 'Olivia', sign: 'Sagittarius'},
         { id: 8, name: 'Robbie', sign: 'Aquarius'},
         { id: 9, name: 'Strawberry', sign: 'Aries'},
         { id: 10, name: 'MattB', sign: 'Aries'},
