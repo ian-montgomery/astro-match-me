@@ -199,3 +199,21 @@ h4 {
   margin: 0.5rem;
 }
 
+
+
+
+.sign-div {
+  color: white;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  border-radius: 20px;
+  
+}
+
+.sign-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30vw;
+  justify-content: center;
+}
