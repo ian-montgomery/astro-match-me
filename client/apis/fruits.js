@@ -1,10 +1,15 @@
-// import request from 'superagent'
+import request from 'superagent'
 
-// const rootUrl = '/api/v1'
+const rootUrl = '/api/v1'
 
-// export function getFruits () {
-//   return request.get(rootUrl + '/fruits')
-//     .then(res => {
-//       return res.body.fruits
-//     })
-// }
+export function getFruits () {
+  return request.get(rootUrl + '/fruits')
+    .then(res => {
+      return res.body.fruits
+    })
+}
+
+
+export function addPerson (person) {
+  return request.post('_____', )
+}

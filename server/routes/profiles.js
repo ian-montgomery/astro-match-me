@@ -15,4 +15,13 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+  console.log(req.body);
+  return db.addProfile(req.body) 
+    .then((ids) => {
+      console.log(ids);
+      res.json({})
+    })
+})
+
 module.exports = router

@@ -23,7 +23,7 @@ class App extends React.Component {
       <Search/>
       <Form/>
       <Matches/>
-      {props.latestPerson && <Profile person={props.latestPerson}/>}
+      {this.props.latestPerson && <Profile person={this.props.latestPerson}/>}
     </div>
   )
 }
