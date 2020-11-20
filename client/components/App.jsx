@@ -20,7 +20,7 @@ class App extends React.Component {
   return (
     <div className='app'>
       <Header/>
-      <Search/>
+      {/* <Search/> */}
       <Form/>
       {this.props.latestPerson && <Profile person={this.props.latestPerson}/>}
       {this.props.latestPerson && <Matches/>}

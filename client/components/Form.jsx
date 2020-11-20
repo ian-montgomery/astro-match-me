@@ -55,16 +55,8 @@ class Form extends React.Component {
           <label className='btn' htmlFor="sign">Sign: </label>
           {/* <input onChange={this.handleChange} className='input' name="sign" type="text"/>
           <br/> */}
-          {/* <div className="sign-container">
 
-            {this.signArr.map((sign) => {
-              return (
-                <div className="sign-div">
-                  <span> {sign} </span>
-                </div>
-              )
-            })}
-            </div> */}
+
 
           <select onChange={this.handleChange} className='input' value={this.state.sign} name="sign" type="text" >
             <option value="">Select</option>
