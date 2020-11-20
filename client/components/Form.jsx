@@ -22,6 +22,10 @@ class Form extends React.Component {
       name: this.state.name,
       sign: this.state.sign
     }))
+    this.setState({
+      name: '',
+      sign: ''
+    })
   }
 
   render () {
@@ -29,21 +33,32 @@ class Form extends React.Component {
       <div>
         <form className='form'>
           <label className='btn' htmlFor="name">Name: </label>
-          <input onChange={this.handleChange} className='input' name="name" label='Name' type="text"/>
+          <input onChange={this.handleChange} className='input' value={this.state.name} name="name" label='Name' type="text"/>
           <br/>
 
           <label className='btn' htmlFor="sign">Sign: </label>
-          <input onChange={this.handleChange} className='input' name="sign" type="text"/>
-          <br/>
+          {/* <input onChange={this.handleChange} className='input' name="sign" type="text"/>
+          <br/> */}
 
-          {/* <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select> */}
 
-          <button onClick ={this.submitHandler} className='text-btn' type="button"> Submit </button>
+
+          <select onChange={this.handleChange} className='input' value={this.state.sign} name="sign" type="text" >
+            <option value="">Select</option>
+            <option value="Aries">Aries</option>
+            <option value="Cancer">Cancer</option>
+            <option value="Leo">Leo</option>
+            <option value="Pisces">Pisces</option>
+            <option value="Gemini">Gemini</option>
+            <option value="Sagittarius">Sagittarius</option>
+            <option value="Virgo">Virgo</option>
+            <option value="Taurus">Taurus</option>
+            <option value="Libra">Libra</option>
+            <option value="Capricorn">Capricorn</option>
+            <option value="Scorpio">Scorpio</option>
+            <option value="Aquarius">Aquarius</option>
+          </select>
+
+          <button onClick ={() => this.submitHandler()} className='text-btn' type="button"> Submit </button>
         </form>
       </div>
     )
