@@ -1,21 +1,33 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
 
-const Search = () => {
-  return (
-<>
 
-<div className="search-box-div">
-    <form className="search-box" action="./">
-  <input className='search' type="text" placeholder="Search.." name="search"/>
+class Search extends React.Component {
 
-  <button type="submit"><i className="fa fa-search"></i></button>
-  </form>
-</div>
 
-    </>
-  )
+  render() {
+    return (
+      <>
+
+        <div className="search-box-div">
+          <form className="search-box" action="./">
+            <input className='search' type="text" placeholder="Search.." name="search" />
+
+            <button type="submit"><i className="fa fa-search"></i></button>
+          </form>
+        </div>
+
+      </>
+    )
+  }
 }
 
+function mapStateToProps(globalState) {
+  return {
+    profiles: globalState.profiles
 
-export default Search
+  }
+}
+
+export default connect(mapStateToProps)(Search)

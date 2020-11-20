@@ -6,9 +6,17 @@ import Form from './Form.jsx'
 import Matches from './Matches.jsx'
 import Profile from './Profile.jsx'
 import { connect } from 'react-redux'
+import {fetchUsers} from '../actions'
 
 // This might need to be turned into a stateful (class-based) component
-function App(props) {
+class App extends React.Component {
+
+    componentDidMount() {
+    this.props.dispatch(fetchUsers())
+  }
+
+  render() {
+  
   return (
     <div className='app'>
       <Header/>
@@ -19,42 +27,18 @@ function App(props) {
     </div>
   )
 }
+}
 
 function mapStateToProps (globalState) {
   return {
-    activePage: globalState.activePage
+    activePage: globalState.activePage,
+    users: globalState.users
+
   }
 }
 
 export default connect(mapStateToProps)(App)
 
 
-// export class App extends React.Component {
-//   state = {
-//     fruits: []
-//   }
 
-//   // componentDidMount () {
-//   //   this.props.dispatch(fetchFruits())
-//   // }
 
-//   render () {
-//     return (
-//       <div className='app'>
-//         {Header}
-//         {Search}
-//         {Form}
-//         {Profile}
-//         {Matches}
-//       </div>
-//     )
-//   }
-// }
-
-// function mapStateToProps (globalState) {
-//   return {
-//     fruits: globalState.fruits
-//   }
-// }
-
-// export default connect(mapStateToProps)(App)

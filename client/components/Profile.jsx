@@ -21,7 +21,8 @@ const Profile = (props) => {
 function mapStateToProps(globalState) {
   return {
     robots: globalState.robots,
-    person: globalState.person
+    person: globalState.person,
+    users: globalState.users
   }
 }
 export default connect(mapStateToProps)(Profile)
