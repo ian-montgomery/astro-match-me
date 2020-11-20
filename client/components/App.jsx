@@ -22,8 +22,8 @@ class App extends React.Component {
       <Header/>
       <Search/>
       <Form/>
-      <Matches/>
-      {props.latestPerson && <Profile person={props.latestPerson}/>}
+      {this.props.latestPerson && <Profile person={this.props.latestPerson}/>}
+      {this.props.latestPerson && <Matches/>}
     </div>
   )
 }
