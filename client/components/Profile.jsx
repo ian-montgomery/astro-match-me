@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+
 
 
 const Profile = (props) => {
@@ -8,21 +8,15 @@ const Profile = (props) => {
       <div className='profile-wrapper'>
 
       <div className='profile'>
-          <img className='profile-pic' src={props.robots}/>
+          <img className='profile-pic' src={`https://robohash.org/${props.person.name}.png`}/>
         <div className='profile-name-plate'>
-          <span className='profile-name'>{props.name}</span>
-          <span className='profile-sign'>{props.sign}</span>
+          <span className='profile-name'>{props.person.name}</span>
+          <span className='profile-sign'>{props.person.sign}</span>
         </div>
         </div>
     </div>
   )
 }
 
-function mapStateToProps(globalState) {
-  return {
-    robots: globalState.robots,
-    person: globalState.person,
-    users: globalState.users
-  }
-}
-export default connect(mapStateToProps)(Profile)
+
+export default Profile

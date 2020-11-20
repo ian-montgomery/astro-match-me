@@ -23,7 +23,7 @@ class App extends React.Component {
       <Search/>
       <Form/>
       <Matches/>
-      <Profile/>
+      {props.latestPerson && <Profile person={props.latestPerson}/>}
     </div>
   )
 }
@@ -32,6 +32,7 @@ class App extends React.Component {
 function mapStateToProps (globalState) {
   return {
     activePage: globalState.activePage,
+    latestPerson: globalState.latestPerson,
     users: globalState.users
 
   }
