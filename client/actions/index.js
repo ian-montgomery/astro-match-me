@@ -31,7 +31,6 @@ export const getRobot = (name) => {
 }
 
 export const ADD_PERSON = 'ADD_PERSON'
-
 export const addPerson = (name, sign) => {
   return {
     type: ADD_PERSON,
@@ -39,5 +38,19 @@ export const addPerson = (name, sign) => {
       name: name,
       sign: sign
     }
+  }
+}
+
+
+
+export function addUser (user) {
+  return (dispatch) => {
+    return request
+      .post('/profiles')
+      .send(user)
+      .then(res => {
+        dispatch(addPerson( user.name, user.sign ))
+        dispatch(getRobot(user.name))
+      })
   }
 }

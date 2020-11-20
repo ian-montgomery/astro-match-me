@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { addPerson } from '../actions'
 import { getRobot } from '../actions'
+import { addUser } from '../actions'
 
 class Form extends React.Component {
   state = {
@@ -10,36 +11,39 @@ class Form extends React.Component {
     sign: ''
   }
 
-  nameHandler = (e) => {
+  handleChange = (e) => {
     this.setState({
-      name: e.target.value
-    })
-  }
-
-  signHandler = (e) => {
-    this.setState({
-      sign: e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
   submitHandler = () => {
-    this.props.dispatch(addPerson( this.state.name, this.state.sign ))
-    this.props.dispatch(getRobot(this.state.name))
+    this.props.dispatch(addUser({
+      name: this.state.name,
+      sign: this.state.sign
+    }))
   }
 
   render () {
     return (
       <div>
         <form className='form'>
-          <label className='btn' htmlFor="Name">Name: </label>
-          <input onChange={(e) => this.nameHandler(e)} className='input' label='Name' type="text"/>
+          <label className='btn' htmlFor="name">Name: </label>
+          <input onChange={this.handleChange} className='input' name="name" label='Name' type="text"/>
           <br/>
 
-          <label className='btn' htmlFor="Name">Sign: </label>
-          <input onChange={(e) => this.signHandler(e)} className='input' type="text"/>
+          <label className='btn' htmlFor="sign">Sign: </label>
+          <input onChange={this.handleChange} className='input' name="sign" type="text"/>
           <br/>
 
-          <submit onClick ={this.submitHandler} className='text-btn' type="submit"> Submit </submit>
+          {/* <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select> */}
+
+          <button onClick ={this.submitHandler} className='text-btn' type="button"> Submit </button>
         </form>
       </div>
     )
