@@ -39,7 +39,7 @@ class Register extends React.Component {
           <input onChange={this.handleChange} className='input' value={this.state.username} autoFocus={true} name="username" label='Name' type="text"/>
           <br/>
           <label className='btn' htmlFor="name">Password: </label>
-          <input onChange={this.handleChange} className='input' value={this.state.password} autoFocus={true} name="password" label='Name' type="text"/>
+          <input onChange={this.handleChange} className='input' value={this.state.password} autoFocus={true} name="password" label='Name' type="password"/>
           <br/>
       
 
