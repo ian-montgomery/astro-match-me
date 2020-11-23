@@ -2,30 +2,34 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 
-class Form extends React.Component {
-  state = {
-    username: '',
-    password: ''
-  }
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-      
-    })
-  }
+import { isAuthenticated, register } from 'authenticare/client'
 
-  submitHandler = (e) => {
-    e.preventDefault()
-    this.props.dispatch(addUser({
-      username: this.state.username,
-      password: this.state.password
-    }))
-    this.setState({
-      username: '',
-      password: ''
-    })
-  }
+import { baseApiUrl as baseUrl } from '../config'
+
+class Register extends React.Component {
+    state = {
+        username: '',
+        password: ''
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleClick = () => {
+        const { username, password } = this.state
+        register({ username, password }, { baseUrl })
+            .then((token) => {
+                if (isAuthenticated()) {
+                    this.props.history.push('/')
+                }
+                return null
+            })
+            .catch(err => alert(err.message))
+    }
 
   render () {
     return (
@@ -39,11 +43,11 @@ class Form extends React.Component {
           <br/>
       
 
-          <button onClick ={(e) => this.submitHandler(e)} className='text-btn' type="submit"> Submit </button>
+          <button onClick ={this.handleClick} className='text-btn' type="submit"> Submit </button>
         </form>
       </div>
     )
   }
 }
 
-export default connect()(Form)
+export default connect()(Register)

@@ -3,19 +3,17 @@ const router = express.Router()
 const { getTokenDecoder } = require('authenticare/server')
 const { applyAuthRoutes } = require('authenticare/server')
 
-const  require('../db/users')
-
 const {
   userExists,
   getUserByName,
-  addUser
+  createUser
 } = require('../db/users')
 
 
 applyAuthRoutes(router, {
   userExists,
   getUserByName,
-  addUser
+  createUser
 })
 
 module.exports = router

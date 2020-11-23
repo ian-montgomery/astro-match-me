@@ -3,12 +3,13 @@ const { generateHash } = require('authenticare/server')
 
 
 module.exports = {
-  addUser,
+  createUser,
   userExists,
   getUserByName
 }
 
-function addUser (user, db = connection) {
+function createUser (user, db = connection) {
+  console.log(user)
   return userExists(user.username, db)
     .then(exists => {
       if (exists) {

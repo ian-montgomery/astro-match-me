@@ -29,15 +29,16 @@ class SignIn extends React.Component {
 
     render() {
         return (
-            <>
+            <div>
 
                 <h2>Sign in</h2>
-                <input onChange={this.handleChange} name='username' value={this.state.username} type='text'></input>
-                
-                <input onChange={this.handleChange} name='password' value={this.state.password} type='text'></input>
+                <label className='btn' htmlFor="name">Username: </label>
+                <input onChange={this.handleChange} name='username' value={this.state.username} type='text'></input><br/>
+                <label className='btn' htmlFor="name">Password: </label>
+                <input onChange={this.handleChange} name='password' value={this.state.password} type='text'></input><br/>
                 <button onClick={this.handleClick}>Sign in</button>
 
-            </>
+            </div>
         )
     }
 }
