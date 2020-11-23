@@ -17,6 +17,8 @@ export default function Nav () {
   return (
     <>
 
+    <Link to = '/home'>Home</Link>
+    <Link to = '/sign-in'>Sing in</Link>
     <Link to = '/register'>Register</Link>
       
         {/* <NavLink to='/'>Home</NavLink>

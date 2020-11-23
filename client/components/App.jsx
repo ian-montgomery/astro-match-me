@@ -1,21 +1,22 @@
 import React from 'react'
 
 import {
-  BrowserRouter as Router,
-  Switch,
+  // BrowserRouter as Router,
   Route,
   Link
 } from "react-router-dom";
 
 import Header from './Header.jsx'
-import Search from './Search.jsx'
-import Form from './Form.jsx'
-import Matches from './Matches.jsx'
-import Profile from './Profile.jsx'
+// import Search from './Search.jsx'
+// import Form from './Form.jsx'
+// import Matches from './Matches.jsx'
+// import Profile from './Profile.jsx'
 import { connect } from 'react-redux'
 import {fetchUsers} from '../actions'
 import Nav from './Nav'
 import Register from './Register.jsx';
+import SignIn from './SignIn'
+import Home from './Home'
 
 // This might need to be turned into a stateful (class-based) component
 class App extends React.Component {
@@ -24,15 +25,15 @@ class App extends React.Component {
     this.props.dispatch(fetchUsers())
   }
 
-  pretendFormComponent = () => {
-    return (
-      <>
-        <Form/>
-        {this.props.latestPerson && <Profile person={this.props.latestPerson}/>}
-        {this.props.latestPerson && <Matches/>}
-      </>
-    )
-  }
+  // pretendFormComponent = () => {
+  //   return (
+  //     <>
+  //       <Form/>
+  //       {this.props.latestPerson && <Profile person={this.props.latestPerson}/>}
+  //       {this.props.latestPerson && <Matches/>}
+  //     </>
+  //   )
+  // }
 
   render() {
   
@@ -42,10 +43,12 @@ class App extends React.Component {
       <Nav />
       {/* <Search/> */}
       <Route exact path='/register' component={Register}/>
+      <Route exact path='/sign-in' component={SignIn}/>
+      <Route exact path='/home' component={Home}/>
 
-      <Route exact path='/' component={this.pretendFormComponent}>
+      {/* <Route exact path='/' component={this.pretendFormComponent}> */}
       
-      </Route>
+      {/* </Route> */}
     </div>
   )
 }
