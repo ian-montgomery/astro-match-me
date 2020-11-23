@@ -10,8 +10,8 @@ class Form extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      [e.target.username]: e.target.value,
-      [e.target.passowrd]: e.target.value
+      [e.target.name]: e.target.value
+      
     })
   }
 
@@ -32,10 +32,10 @@ class Form extends React.Component {
       <div>
         <form className='form'>
           <label className='btn' htmlFor="name">Username: </label>
-          <input onChange={this.handleChange} className='input' value={this.state.username} autoFocus={true} name="name" label='Name' type="text"/>
+          <input onChange={this.handleChange} className='input' value={this.state.username} autoFocus={true} name="username" label='Name' type="text"/>
           <br/>
           <label className='btn' htmlFor="name">Password: </label>
-          <input onChange={this.handleChange} className='input' value={this.state.password} autoFocus={true} name="name" label='Name' type="text"/>
+          <input onChange={this.handleChange} className='input' value={this.state.password} autoFocus={true} name="password" label='Name' type="text"/>
           <br/>
       
 

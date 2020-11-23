@@ -1,58 +1,45 @@
-// import React, { useState } from 'react'
-// import {isAuthenticated, signIn } from 'authenticare/client'
+import React from 'react'
+import { isAuthenticated, signIn } from 'authenticare/client'
 
-// import { baseApiUrl as baseUrl } from '../config'
+import { baseApiUrl as baseUrl } from '../config'
 
-// // function SignIn (props) {
-// //   const [form, setForm] = useState({
-// //     username: '',
-// //     password: ''
-// //   })
+class SignIn extends React.Component {
+    state = {
+        username: '',
+        password: ''
+    }
 
-//   const handleChange = e => {
-//     const { name, value } = e.target
-//     setForm({
-//       ...form,
-//       [name]: value
-//     })
-//   }
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
 
-//   const handleClick = () => {
-//     const { username, password } = form
-//     return signIn({ username, password }, { baseUrl })
-//       .then((token) => {
-//         if (isAuthenticated()) {
-//           props.history.push('/')
-//         }
-//         return null
-//       })
-//   }
+    handleClick = () => {
+        const { username, password } = this.state
+        signIn({ username, password }, { baseUrl })
+            .then((token) => {
+                if (isAuthenticated()) {
+                    this.props.history.push('/')
+                }
+                return null
+            })
+            .catch(err => alert(err.message))
+    }
 
-//   return (
-//     <>
+    render() {
+        return (
+            <>
 
-//       <h2>Sign in</h2>
-//       <input onChange={this.handleChange} value={this.state.username} type='text'></input>
-//       <input onChange={this.handleChange} value={this.state.password} type='text'></input>
-//       <button onClick={handleClick}>Sign in</button>
-//       {/* <GridForm>
-//         <ColOne htmlFor='username'>Username:</ColOne>
-//         <ColTwo type='text'
-//           id='username'
-//           name='username'
-//           value={form.username}
-//           onChange={handleChange} />
+                <h2>Sign in</h2>
+                <input onChange={this.handleChange} name='username' value={this.state.username} type='text'></input>
+                
+                <input onChange={this.handleChange} name='password' value={this.state.password} type='text'></input>
+                <button onClick={this.handleClick}>Sign in</button>
 
-//         <ColOne htmlFor='password'>Password:</ColOne>
-//         <ColTwo type='password'
-//           id='password'
-//           name='password'
-//           value={form.password}
-//           onChange={handleChange} />
+            </>
+        )
+    }
+}
 
-//         <Button type='button' onClick={handleClick}>Sign in</Button>
-//       </GridForm> */}
-//     </>
-//   )
-// }
-// export default SignIn
+export default SignIn

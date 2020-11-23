@@ -1,20 +1,21 @@
 const express = require('express')
 const router = express.Router()
-
 const { getTokenDecoder } = require('authenticare/server')
+const { applyAuthRoutes } = require('authenticare/server')
 
-const db = require('../db/users')
+const  require('../db/users')
+
+const {
+  userExists,
+  getUserByName,
+  addUser
+} = require('../db/users')
+
+
+applyAuthRoutes(router, {
+  userExists,
+  getUserByName,
+  addUser
+})
 
 module.exports = router
-
-// GET /api/v1/users
-router.get('/register', (req, res) => {
-    // try {
-    //   db.getFruits().then(fruits => {
-    //      res.json({ fruits }) 
-    //   })
-    // } catch (err) {
-    //   res.status(500).send(err.message)
-    // }
-    res.render('Register')
-  })

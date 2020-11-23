@@ -9,7 +9,8 @@ function addProfile (person, db = connection) {
 }
 
 
+
 module.exports = {
   getProfiles,
-  addProfile
+  addProfile,
 }

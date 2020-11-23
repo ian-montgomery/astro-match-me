@@ -1,16 +1,14 @@
 const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
-// TODO: implement or import a proper generateHash function
-// const generateHash = () => 'fake-hash-value'
 
 module.exports = {
-  createUser,
+  addUser,
   userExists,
   getUserByName
 }
 
-function createUser (user, db = connection) {
+function addUser (user, db = connection) {
   return userExists(user.username, db)
     .then(exists => {
       if (exists) {
