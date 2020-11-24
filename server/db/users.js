@@ -38,3 +38,10 @@ function getUserByName (username, db = connection) {
     .where('username', username)
     .first()
 }
+
+// function joinId (profId, db = connection) {
+//   return db('users')
+//   .join('profiles', 'profiles.id', 'users.id')
+  
+
+// }

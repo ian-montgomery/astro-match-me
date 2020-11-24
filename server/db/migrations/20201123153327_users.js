@@ -1,7 +1,6 @@
 exports.up = (knex, Promise) => {
     return knex.schema.createTable('users', table => {
       table.increments('id')
-      table.integer('profile_id')
       table.string('username')
       table.binary('hash')
     })

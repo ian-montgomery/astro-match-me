@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-
-
 import { isAuthenticated, register } from 'authenticare/client'
 
 import { baseApiUrl as baseUrl } from '../config'

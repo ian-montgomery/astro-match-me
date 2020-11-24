@@ -1,3 +1,5 @@
+const { getTokenDecoder } = require('authenticare/server/token')
+
 const express = require('express')
 const router = express.Router()
 
@@ -16,9 +18,14 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
-  console.log(req.body);
-  return db.addProfile(req.body) 
+router.post('/', getTokenDecoder(), (req, res) => {
+  const profile = req.body
+  // { name: 'kelly, sign: 'pisces' }
+
+  profile.user_id = req.user.id
+  // { name: 'kelly, sign: 'pisces', user_id: 17 }
+  
+  return db.addProfile(profile) 
     .then((ids) => {
       console.log(ids);
       res.json({})
