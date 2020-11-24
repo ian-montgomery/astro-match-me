@@ -32,6 +32,7 @@ class Register extends React.Component {
   render () {
     return (
       <div>
+          <h2>Register</h2>
         <form className='form'>
           <label className='btn' htmlFor="name">Username: </label>
           <input onChange={this.handleChange} className='input' value={this.state.username} autoFocus={true} name="username" label='Name' type="text"/>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { addPerson } from '../actions'
 import { getRobot } from '../actions'
 import { addUser } from '../actions'
+import { addProfile } from '../apis/profiles'
 
 class Form extends React.Component {
   state = {
@@ -17,6 +18,7 @@ class Form extends React.Component {
     })
   }
 
+
   submitHandler = (e) => {
     e.preventDefault()
     this.props.dispatch(addUser({
@@ -27,6 +29,7 @@ class Form extends React.Component {
       name: '',
       sign: ''
     })
+    addProfile(this.state)
   }
   
   // signArr = [
