@@ -17,12 +17,13 @@ class Register extends React.Component {
         })
     }
 
-    handleClick = () => {
+    handleClick = (e) => {
+      e.preventDefault()
         const { username, password } = this.state
         register({ username, password }, { baseUrl })
             .then((token) => {
                 if (isAuthenticated()) {
-                    this.props.history.push('/')
+                    this.props.history.push('/home')
                 }
                 return null
             })
@@ -33,7 +34,7 @@ class Register extends React.Component {
     return (
       <div>
           <h2>Register</h2>
-        <form className='form'>
+        <form className='form' onSubmit={this.handleClick}>
           <label className='btn' htmlFor="name">Username: </label>
           <input onChange={this.handleChange} className='input' value={this.state.username} autoFocus={true} name="username" label='Name' type="text"/>
           <br/>
@@ -42,7 +43,7 @@ class Register extends React.Component {
           <br/>
       
 
-          <button onClick ={this.handleClick} className='text-btn' type="submit"> Submit </button>
+          <button className='text-btn' type="submit"> Submit </button>
         </form>
       </div>
     )

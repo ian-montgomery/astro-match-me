@@ -9,7 +9,7 @@ const server = express()
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
-server.use('/profiles', profileRoutes)
+server.use('/api/v1/profiles', profileRoutes)
 server.use('/api/v1', authRoutes)
 
 server.get('*', (req, res) => {

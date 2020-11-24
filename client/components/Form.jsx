@@ -29,7 +29,6 @@ class Form extends React.Component {
       name: '',
       sign: ''
     })
-    addProfile(this.state)
   }
   
   // signArr = [

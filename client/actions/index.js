@@ -1,4 +1,5 @@
 import request from 'superagent'
+import { addProfile } from '../apis/profiles'
 
 export const GET_USERS = 'GET_USERS'
 
@@ -45,9 +46,7 @@ export const addPerson = (name, sign) => {
 
 export function addUser (user) {
   return (dispatch) => {
-    return request
-      .post('/profiles')
-      .send(user)
+    return addProfile(user)
       .then(res => {
         dispatch(addPerson( user.name, user.sign ))
         dispatch(getRobot(user.name))
