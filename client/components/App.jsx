@@ -40,7 +40,7 @@ class App extends React.Component {
   return (
     <div className='app'>
       <Header/>
-      <Nav />
+      <Route path='/' component={Nav} />
       {/* <Search/> */}
       <Route exact path='/register' component={Register}/>
       <Route exact path='/sign-in' component={SignIn}/>

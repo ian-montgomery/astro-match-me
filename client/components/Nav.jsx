@@ -9,11 +9,14 @@ import { IfAuthenticated, IfNotAuthenticated } from './Auth'
 export default function Nav () {
   return (
     <>
-    
-      <Link to = '/home'>Home</Link>
-      <Link to = '/sign-in'>Sing in</Link>
-      <Link to = '/register'>Register</Link>
- 
+      <IfAuthenticated>
+        <Link to='/home'>Home</Link>
+        <Link to='/sign-in' onClick={logOff}>Log off</Link>
+      </IfAuthenticated>
+      <IfNotAuthenticated>
+        <Link to='/sign-in'>Sign in</Link>
+        <Link to='/register'>Register</Link>
+      </IfNotAuthenticated>
      
     </>
   )
