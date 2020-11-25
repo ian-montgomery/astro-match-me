@@ -1,10 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addPerson } from '../actions'
-import { getRobot } from '../actions'
 import { addUser } from '../actions'
-import { addProfile } from '../apis/profiles'
+
 
 class Form extends React.Component {
   state = {
@@ -31,20 +29,6 @@ class Form extends React.Component {
     })
   }
   
-  // signArr = [
-  //   '♈︎',
-  //   'Cancer',
-  //   'Leo',
-  //   'Pisces',
-  //   'Gemini',
-  //   'Sagittarius',
-  //   'Virgo',
-  //   'Taurus',
-  //   'Libra',
-  //   'Capricorn',
-  //   'Scorpio',
-  //   'Aquarius'
-  // ]
 
   render () {
     return (

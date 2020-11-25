@@ -23,7 +23,7 @@ class Register extends React.Component {
         register({ username, password }, { baseUrl })
             .then((token) => {
                 if (isAuthenticated()) {
-                    this.props.history.push('/home')
+                    this.props.history.push('/create-profile')
                 }
                 return null
             })

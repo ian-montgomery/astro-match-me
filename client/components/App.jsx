@@ -8,15 +8,14 @@ import {
 
 import Header from './Header.jsx'
 // import Search from './Search.jsx'
-// import Form from './Form.jsx'
-// import Matches from './Matches.jsx'
-// import Profile from './Profile.jsx'
+import Form from './Form.jsx'
 import { connect } from 'react-redux'
 import {fetchUsers} from '../actions'
 import Nav from './Nav'
 import Register from './Register.jsx';
 import SignIn from './SignIn'
 import Home from './Home'
+import LandingPage from './LandingPage.jsx';
 
 // This might need to be turned into a stateful (class-based) component
 class App extends React.Component {
@@ -25,15 +24,6 @@ class App extends React.Component {
     this.props.dispatch(fetchUsers())
   }
 
-  // pretendFormComponent = () => {
-  //   return (
-  //     <>
-  //       <Form/>
-  //       {this.props.latestPerson && <Profile person={this.props.latestPerson}/>}
-  //       {this.props.latestPerson && <Matches/>}
-  //     </>
-  //   )
-  // }
 
   render() {
   
@@ -43,12 +33,10 @@ class App extends React.Component {
       <Route path='/' component={Nav} />
       {/* <Search/> */}
       <Route exact path='/register' component={Register}/>
+      <Route exact path='/' component={LandingPage}/>
       <Route exact path='/sign-in' component={SignIn}/>
       <Route exact path='/home' component={Home}/>
-
-      {/* <Route exact path='/' component={this.pretendFormComponent}> */}
-      
-      {/* </Route> */}
+      <Route exact path='/create-profile' component={Form}/>
     </div>
   )
 }

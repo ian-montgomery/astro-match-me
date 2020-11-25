@@ -1,7 +1,5 @@
 import request from 'superagent'
   import { getAuthorizationHeader } from 'authenticare/client'
-// TODO: implement or import a proper getAuthorizationHeader function
-// const getAuthorizationHeader = () => ({ Authorization: 'Bearer encoded-token' })
 
 const rootUrl = '/api/v1/profiles'
 const acceptJsonHeader = { Accept: 'application/json' }
@@ -23,6 +21,8 @@ export function addProfile (profile) {
     .then(res => res.body.profiles)
     .catch(logError)
 }
+
+
 
 // export function updateFruit (fruit) {
 //   return request.put(rootUrl)

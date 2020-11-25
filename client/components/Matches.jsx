@@ -48,13 +48,6 @@ function mapStateToProps(globalState) {
   return {
     latestPerson: globalState.latestPerson,
     profiles: globalState.users
-    // profiles: [
-    //   { id: 1, name: 'Ian', sign: 'Leo' },
-    //   { id: 2, name: 'Orlando', sign: 'Aquarius' },
-    //   { id: 3, name: 'Hortense', sign: 'Cancer' },
-    //   { id: 4, name: 'Emily', sign: 'Aries' },
-    //   { id: 5, name: 'Saskia', sign: 'Leo' },
-    // ]
   }
 }
 
