@@ -1,5 +1,3 @@
-
-
 const { applyAuthRoutes } = require('authenticare/server')
 
 const express = require('express')

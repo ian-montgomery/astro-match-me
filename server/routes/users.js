@@ -9,7 +9,6 @@ const {
   createUser
 } = require('../db/users')
 
-
 applyAuthRoutes(router, {
   userExists,
   getUserByName,

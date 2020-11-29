@@ -13,7 +13,7 @@ server.use('/api/v1/profiles', profileRoutes)
 server.use('/api/v1', authRoutes)
 
 server.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'))
-  })
+  res.sendFile(path.join(__dirname, 'public/index.html'))
+})
 
 module.exports = server

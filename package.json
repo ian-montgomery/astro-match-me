@@ -17,6 +17,7 @@
     "build:client": "npm run webpack -- --mode production",
     "build:server": "npm run knex -- migrate:latest",
     "lint": "eslint --ext .js,.jsx .",
+    "lint-f": "eslint --ext .js,.jsx . --fix",
     "webpack": "webpack --config ./client/webpack.config.js",
     "knex": "knex --knexfile ./server/db/knexfile.js"
   },
@@ -61,7 +62,7 @@
     "css-loader": "^5.0.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
-    "eslint": "7.13.0",
+    "eslint": "^7.13.0",
     "eslint-config-eda": "0.1.4",
     "jest": "^26.6.3",
     "jsdom": "^16.4.0",

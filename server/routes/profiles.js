@@ -5,11 +5,9 @@ const router = express.Router()
 
 const db = require('../db/db')
 
-
 router.get('/', (req, res) => {
   return db.getProfiles()
     .then(profiles => {
-
       res.json(profiles)
     })
     .catch(err => {
@@ -24,10 +22,10 @@ router.post('/', getTokenDecoder(), (req, res) => {
 
   profile.user_id = req.user.id
   // { name: 'kelly, sign: 'pisces', user_id: 17 }
-  
-  return db.addProfile(profile) 
+
+  return db.addProfile(profile)
     .then((ids) => {
-      console.log(ids);
+      console.log(ids)
       res.json({})
     })
 })

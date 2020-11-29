@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import { addUser } from '../actions'
 
-
 class Form extends React.Component {
   state = {
     name: '',
@@ -16,7 +15,6 @@ class Form extends React.Component {
     })
   }
 
-
   submitHandler = (e) => {
     e.preventDefault()
     this.props.dispatch(addUser({
@@ -28,7 +26,6 @@ class Form extends React.Component {
       sign: ''
     })
   }
-  
 
   render () {
     return (
@@ -41,8 +38,6 @@ class Form extends React.Component {
           <label className='btn' htmlFor="sign">Sign: </label>
           {/* <input onChange={this.handleChange} className='input' name="sign" type="text"/>
           <br/> */}
-
-
 
           <select onChange={this.handleChange} className='input' value={this.state.sign} name="sign" type="text" >
             <option value="">Select</option>

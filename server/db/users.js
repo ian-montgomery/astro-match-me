@@ -1,7 +1,6 @@
 const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
-
 module.exports = {
   createUser,
   userExists,
@@ -42,6 +41,5 @@ function getUserByName (username, db = connection) {
 // function joinId (profId, db = connection) {
 //   return db('users')
 //   .join('profiles', 'profiles.id', 'users.id')
-  
 
 // }
