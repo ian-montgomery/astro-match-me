@@ -19,7 +19,8 @@ function mapStateToProps (globalState) {
   return {
     activePage: globalState.activePage,
     latestPerson: globalState.latestPerson,
-    users: globalState.users
+    users: globalState.users,
+    user: globalState.user
 
   }
 }

@@ -13,10 +13,12 @@ export const getUsers = (users) => {
 export function fetchUsers () {
   return (dispatch) => {
     return request
-      .get('/profiles')
-      .then(res => {
-        dispatch(getUsers(res.body))
+    .get('/api/v1/profiles')
+    .then(res => {
+      dispatch(getUsers(res.body))
+      console.log(res)
       })
+      .catch(err => console.log(err))
   }
 }
 

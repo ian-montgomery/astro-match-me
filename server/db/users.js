@@ -38,8 +38,4 @@ function getUserByName (username, db = connection) {
     .first()
 }
 
-// function joinId (profId, db = connection) {
-//   return db('users')
-//   .join('profiles', 'profiles.id', 'users.id')
 
-// }
