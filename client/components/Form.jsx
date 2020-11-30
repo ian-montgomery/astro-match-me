@@ -19,7 +19,7 @@ class Form extends React.Component {
     e.preventDefault()
     this.props.dispatch(addUser({
       name: this.state.name,
-      sign: this.state.sign
+      sign: this.state.sign,
     }))
     this.setState({
       name: '',

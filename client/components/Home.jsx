@@ -4,12 +4,19 @@ import { connect } from 'react-redux'
 import Matches from './Matches.jsx'
 import Profile from './Profile.jsx'
 
+
 class Home extends React.Component {
+  
+
+
   render () {
+
+    const loggedInUser = this.props.users.filter(user => user.user_id == this.props.auth.user.id)[0]
+
     return (
       <>
-        {this.props.latestPerson && <Profile person={this.props.latestPerson}/>}
-        {this.props.latestPerson && <Matches/>}
+        <Profile person={loggedInUser} />
+        <Matches person={loggedInUser} />
       </>
     )
   }
@@ -20,8 +27,7 @@ function mapStateToProps (globalState) {
     activePage: globalState.activePage,
     latestPerson: globalState.latestPerson,
     users: globalState.users,
-    user: globalState.user
-
+    auth: globalState.auth
   }
 }
 

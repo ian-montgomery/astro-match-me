@@ -18,7 +18,7 @@ import Home from './Home'
 import LandingPage from './LandingPage.jsx'
 import { checkAuth } from '../actions/auth.js'
 
-// This might need to be turned into a stateful (class-based) component
+
 class App extends React.Component {
   componentDidMount () {
     this.props.dispatch(checkAuth())
@@ -27,16 +27,21 @@ class App extends React.Component {
 
   render () {
     return (
+      
       <div className='app'>
         <Header/>
-        <Route path='/' component={Nav} />
-        {/* <Search/> */}
-        <Route exact path='/register' component={Register}/>
-        <Route exact path='/' component={LandingPage}/>
-        <Route exact path='/sign-in' component={SignIn}/>
-        <Route exact path='/home' component={Home}/>
-        <Route exact path='/create-profile' component={Form}/>
+        {this.props.asshole && (
+          <> 
+            <Route path='/' component={Nav} />
+            <Route exact path='/register' component={Register}/>
+            <Route exact path='/' component={LandingPage}/>
+            <Route exact path='/sign-in' component={SignIn}/>
+            <Route exact path='/home' component={Home}/>
+            <Route exact path='/create-profile' component={Form}/>
+          </>
+        )} 
       </div>
+     
     )
   }
 }
@@ -45,7 +50,8 @@ function mapStateToProps (globalState) {
   return {
     activePage: globalState.activePage,
     latestPerson: globalState.latestPerson,
-    users: globalState.users
+    users: globalState.users,
+    asshole: globalState.asshole
 
   }
 }

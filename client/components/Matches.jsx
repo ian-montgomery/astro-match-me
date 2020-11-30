@@ -7,7 +7,7 @@ function Matches (props) {
   // when passing in something stored in redux global state it needs to be props.sign or {sign}
   // when referencing and accessing a variable in a json file it needs to be using square bracket notation so that it knows to read the value of the variable
 
-  const userSign = props.latestPerson.sign
+  const userSign = props.person.sign
   const myMatches = data[userSign].top
 
   const matchedProfiles = matchFilter(props.profiles, myMatches)
@@ -28,12 +28,12 @@ function Matches (props) {
 // Map through the top
 
 function matchFilter (profiles, topArray) {
-  console.log(profiles, topArray)
+  // console.log(profiles, topArray)
   profiles = profiles.filter((profile) => {
-    console.log(profile.sign, topArray.includes(profile.sign), topArray)
+    // console.log(profile.sign, topArray.includes(profile.sign), topArray)
     return topArray.includes(profile.sign)
   })
-  console.log(profiles)
+  // console.log(profiles)
   return profiles
 }
 // based on the userSign can we return a list of top matching signs
@@ -42,7 +42,6 @@ function matchFilter (profiles, topArray) {
 
 function mapStateToProps (globalState) {
   return {
-    latestPerson: globalState.latestPerson,
     profiles: globalState.users
   }
 }
