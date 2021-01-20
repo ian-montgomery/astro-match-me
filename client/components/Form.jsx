@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addPerson } from '../actions'
-import { getRobot } from '../actions'
 import { addUser } from '../actions'
 
 class Form extends React.Component {
@@ -21,28 +19,13 @@ class Form extends React.Component {
     e.preventDefault()
     this.props.dispatch(addUser({
       name: this.state.name,
-      sign: this.state.sign
+      sign: this.state.sign,
     }))
     this.setState({
       name: '',
       sign: ''
     })
   }
-  
-  // signArr = [
-  //   '♈︎',
-  //   'Cancer',
-  //   'Leo',
-  //   'Pisces',
-  //   'Gemini',
-  //   'Sagittarius',
-  //   'Virgo',
-  //   'Taurus',
-  //   'Libra',
-  //   'Capricorn',
-  //   'Scorpio',
-  //   'Aquarius'
-  // ]
 
   render () {
     return (
@@ -55,8 +38,6 @@ class Form extends React.Component {
           <label className='btn' htmlFor="sign">Sign: </label>
           {/* <input onChange={this.handleChange} className='input' name="sign" type="text"/>
           <br/> */}
-
-
 
           <select onChange={this.handleChange} className='input' value={this.state.sign} name="sign" type="text" >
             <option value="">Select</option>

@@ -4,7 +4,7 @@ const initialState = ['aries']
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case  RETURN_MATCHES:
+    case RETURN_MATCHES:
       return action.matches
     default:
       return state

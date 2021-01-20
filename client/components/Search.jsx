@@ -2,11 +2,8 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-
 class Search extends React.Component {
-
-
-  render() {
+  render () {
     return (
       <>
 
@@ -23,7 +20,7 @@ class Search extends React.Component {
   }
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   return {
     profiles: globalState.profiles
 
